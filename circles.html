@@ -187,6 +187,12 @@
 			for(var i = 0; i < circles.length; i++){
 				circles[i].fillColor.hue += 1;
 				circles[i].scale(.9);
+
+				//Removes the item if the circle is no longer visible
+				if(circles[i].area < 1){
+				    circles[i].remove();
+				    circles.splice(i, 1);
+				}
 			}
 		}
 
